@@ -1,10 +1,10 @@
-def is_palindrome(s: str) -> bool:
-    s = s.replace(" ", "").lower()
-    return s == s[::-1]
+def is_palindrome(text):
+    text = text.lower()              # convert to lowercase
+    return text == text[::-1]        # compare with reversed string
 
-if __name__ == "__main__":
-    user_input = input("Enter a string: ")
-    if is_palindrome(user_input):
-        print(f'"{user_input}" is a palindrome.')
-    else:
-        print(f'"{user_input}" is not a palindrome.')
+# Example usage
+s = input("Enter a string: ")
+if is_palindrome(s):
+    print("Palindrome")
+else:
+    print("Not a palindrome")
