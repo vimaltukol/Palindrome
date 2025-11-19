@@ -1,10 +1,10 @@
-def is_palindrome(text):
-    text = text.lower()              # convert to lowercase
-    return text == text[::-1]        # compare with reversed string
+def is_palindrome(s="madam"):   # default value is "madam"
+    # Remove spaces and convert to lowercase for a clean comparison
+    clean_s = s.replace(" ", "").lower()
+    return clean_s == clean_s[::-1]
 
-# Example usage
-s = input("Enter a string: ")
-if is_palindrome(s):
-    print("Palindrome")
-else:
-    print("Not a palindrome")
+
+# Calling the function without argument (uses default)
+result_default = is_palindrome()
+print(f"Default value ('madam') → Palindrome? {result_default}")
+
