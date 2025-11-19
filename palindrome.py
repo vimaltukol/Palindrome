@@ -1,10 +1,19 @@
-def is_palindrome(s="madam"):   # default value is "madam"
-    # Remove spaces and convert to lowercase for a clean comparison
-    clean_s = s.replace(" ", "").lower()
-    return clean_s == clean_s[::-1]
+import sys
 
+def is_palindrome(s):
+    return s == s[::-1]
 
-# Calling the function without argument (uses default)
-result_default = is_palindrome()
-print(f"Default value ('madam') → Palindrome? {result_default}")
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python palindrome.py <string>")
+        return
+    s = sys.argv[1]
+    if len(s) < 4 or not s.isalpha():
+        print("Please enter at least 4 alphabets only")
+    elif is_palindrome(s):
+        print(f"{s} is a palindrome")
+    else:
+        print(f"{s} is not a palindrome")
 
+if __name__ == "__main__":
+   main()
